@@ -5,6 +5,8 @@ using namespace std;
 
 void decimalBinario(int);
 void ejercicio1(int);
+void ejercicio2(int);
+void imprimeMatriz();
 
 int main(){
 	int opcion;
@@ -68,4 +70,12 @@ void ejercicio1(int numero){
 	for(int i=0;i<numero;i++){
 		decimalBinario(i);
 	}
+}
+
+void ejercicio2(int n){
+	
+}
+
+void imprimeMatriz(){
+	
 }
