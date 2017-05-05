@@ -84,8 +84,14 @@ void ejercicio2(int n){
 	for (int i = 0; i < filas; i++) {
         	pm[i] = new int[columnas];
     	}
+	int contador=0;
+	for(int i=0;i<n;i++){
+		for(int j=0;j<n;j++){
+			pm[i][j]=contador;
+			contador++;
+		}
+	}
 	imprimeMatriz(pm,filas,columnas);
-	
 }
 
 void imprimeMatriz(int **pm,int filas,int columnas){
