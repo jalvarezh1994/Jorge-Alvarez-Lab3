@@ -7,6 +7,7 @@ void decimalBinario(int);
 void ejercicio1(int);
 void ejercicio2(int);
 void imprimeMatriz(int **,int,int);
+void imprimeMatrizRotada(int **,int,int);
 
 int main(){
 	int opcion;
@@ -92,11 +93,22 @@ void ejercicio2(int n){
 		}
 	}
 	imprimeMatriz(pm,filas,columnas);
+	cout<<endl;
+	imprimeMatrizRotada(pm,filas,columnas);
 }
 
 void imprimeMatriz(int **pm,int filas,int columnas){
 	for(int i=0;i<filas;i++){
 		for(int j=0;j<columnas;j++){
+			cout<<pm[i][j]<<"\t";
+		}
+		cout<<endl;
+	}
+}
+
+void imprimeMatrizRotada(int **pm,int filas,int columnas){
+	for(int i=columnas-1;i>=0;i--){
+		for(int j=0;j<filas;j++){
 			cout<<pm[i][j]<<"\t";
 		}
 		cout<<endl;
