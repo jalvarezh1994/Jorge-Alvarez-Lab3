@@ -6,7 +6,7 @@ using namespace std;
 void decimalBinario(int);
 void ejercicio1(int);
 void ejercicio2(int);
-void imprimeMatriz();
+void imprimeMatriz(int **,int,int);
 
 int main(){
 	int opcion;
@@ -26,6 +26,10 @@ int main(){
 				break;
 			}
 			case 2:{
+				int numero;
+				cout<<"Ingrese el tamaño de la matriz: ";
+				cin>>numero;
+				ejercicio2(numero);
 				break;
 			}
 			case 3:{
@@ -73,9 +77,22 @@ void ejercicio1(int numero){
 }
 
 void ejercicio2(int n){
+	int **pm;
+	int filas=n;
+	int columnas=n;
+	pm = new int* [filas];
+	for (int i = 0; i < filas; i++) {
+        	pm[i] = new int[columnas];
+    	}
+	imprimeMatriz(pm,filas,columnas);
 	
 }
 
-void imprimeMatriz(){
-	
+void imprimeMatriz(int **pm,int filas,int columnas){
+	for(int i=0;i<filas;i++){
+		for(int j=0;j<columnas;j++){
+			cout<<pm[i][j]<<"\t";
+		}
+		cout<<endl;
+	}
 }
