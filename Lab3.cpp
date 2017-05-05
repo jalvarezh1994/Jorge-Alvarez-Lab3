@@ -4,6 +4,7 @@
 using namespace std;
 
 void decimalBinario(int);
+void ejercicio1(int);
 
 int main(){
 	int opcion;
@@ -19,7 +20,7 @@ int main(){
 				int numero;
 				cout<<"Ingrese el número: ";
 				cin>>numero;
-				decimalBinario(numero);
+				ejercicio1(numero);
 				break;
 			}
 			case 2:{
@@ -43,13 +44,28 @@ void decimalBinario(int decimal){
 	//cout<<cifras;
 	int binario1[cifras];
 	int cifra=0;
+	int malvado=0;
 	do{
 		binario1[cifra]=decimal1%2;
+		if(binario1[cifra]!=0){
+			malvado++;
+		}
 		cifra++;
 		decimal1=decimal1/2;
 	}while(decimal1>0);
+	//cout<<"unos: "<<malvado<<endl;
 	for(int i=0;i<cifras;i++){
 		cout<<binario1[cifras-i-1]<<" ";
 	}
-	cout<<endl;
+	if(malvado%2==0){
+		cout<<"Es malvado"<<endl;
+	}else{
+		cout<<"No es malvado"<<endl;
+	}
+}
+
+void ejercicio1(int numero){
+	for(int i=0;i<numero;i++){
+		decimalBinario(i);
+	}
 }
