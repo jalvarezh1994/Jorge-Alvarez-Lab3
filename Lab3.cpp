@@ -3,7 +3,7 @@
 
 using namespace std;
 
-string decimalBinario(int);
+void decimalBinario(int);
 
 int main(){
 	int opcion;
@@ -19,7 +19,7 @@ int main(){
 				int numero;
 				cout<<"Ingrese el número: ";
 				cin>>numero;
-				cout<<decimalBinario(numero)<<endl;
+				decimalBinario(numero);
 				break;
 			}
 			case 2:{
@@ -33,17 +33,23 @@ int main(){
 	return 0;
 }
 
-string decimalBinario(int decimal){
+void decimalBinario(int decimal){
 	int cifras=0;
-	int resto;
-	string binario1="";
-	string binario2="";
-	do{	
-		resto=decimal%2;
-		binario1=binario1+10*cifras+resto;
+	int decimal1=decimal;
+	do{
+		cifras++;
 		decimal=decimal/2;
-		cifras++;	
-	}while(decimal/2>0);
-	binario2=binario1;
-	return binario2;
+	}while(decimal>0);
+	//cout<<cifras;
+	int binario1[cifras];
+	int cifra=0;
+	do{
+		binario1[cifra]=decimal1%2;
+		cifra++;
+		decimal1=decimal1/2;
+	}while(decimal1>0);
+	for(int i=0;i<cifras;i++){
+		cout<<binario1[cifras-i-1]<<" ";
+	}
+	cout<<endl;
 }
